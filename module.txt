@@ -1,0 +1,42 @@
+uname -r
+
+make mrporper(make clean < make mrproper < make distclean) except kernal setting, include kernal setting, mrproper backup&patch file 
+make menuconfig(make config, make menuconfig, make nconfig, make xconfig, make gconfig) text, dialog+list, color menu, xwindow, GTK+
+make bzImage
+make modules -> module compile
+make install -> lib/modules/kernel-verision
+make modules_install -> image copy, grup.conf install
+reboot
+
+
+lsmod(/proc/modules)
+insmod
+insmod dummy
+insmod /home/francis/Desktip/dummy.ko
+rmmod
+rmmod dummy
+modprobe(insmod + dep check)
+modprobe -l : list
+-r, --remove
+-c, --showconfig
+modinfo e1000
+/etc/modprobe.d -> for modprobe
+modules.dep -> depmod command
+
+
+lpr -#2(BSD)
+lprm 5(BSD)
+lprm -P mydest 10
+lpc status(BSD)
+lpq -a(BSD)
+
+lp -n 3 myfile.txt(System V)
+cancel printer-7(System V)
+lpstat(system V)
+
+alsactl(sound)
+
+xsane(scanner)
+sane-find-scanner
+scanimage -L
+scanimage > image.pnm

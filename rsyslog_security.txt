@@ -1,0 +1,76 @@
+
+dmesg
+dmesg -level=err, warn
+dmesg -T
+dmesg -c
+
+*.=crit;user.none		/var/log/critical
+*.alert			*
+cron.*			root,francis
+authpriv.*			/dev/tty1
+mail.*;mail.!=debug		/var/log/meail-message
+auth,authpriv.alert 		@192.168.0.1(udp)
+auth,authpriv.alert		@@192.168.0.1(tcp)
+
+none
+debug
+info
+notice
+warn
+err
+crit
+alert
+emerg, panic
+
+
+/etc/logloate.conf
+/etc/logrotate.d/wtmp
+
+
+===================
+security
+====================
+chattr [option] mod file
+option : -R ; recursive
+a : only add
+A : don't mod atime
+i : can't remove/rename
+
+chattr +a file1
+lsattr -a
+lsattr file1 file2
+
+
+
+
+setfacl -m u:evan:r file1
+setfacl -m m::rw file2
+-m : acl add/mod
+-x : acl remove
+-R : recursive ACL
+-b : all Acl entry remove
+
+getfacl file1
+-a : show file's ACL
+-d : show default acl
+-R : recursive acl
+-p : pwd
+
+sysctl -a
+sysctl -n net.ipv4.icmp_echo_ignore_all
+sysctl -w net.ip4.icmp_echo_ignore_all=1
+
+/proc/sys/net/ipv4/tcp_timestamps=0
+/proc/sys/net/ipv4/tcp_syncookies=1
+/proc/sys/net/ipv4/icmp_echo_ignore_broadcasts=1
+
+/etc/ssh/sshd_config
+Port
+PermitRootLogin -> no(can't login root)
+AllowUsers francis chris
+LoginGraceTime(wait for login)
+PasswordAuthentication
+PubkeyAuthentication
+
+nmap google.com
+nmap -p 1-10000 localhost

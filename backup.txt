@@ -1,0 +1,43 @@
+tar -cvfp archive.tar /path/to/dir
+tar -xvf archive.tar
+-z  : gz
+-j : bz2
+
+tar -g snapthot -cvfp archive-level0.tar /path/to/dir - first
+tar -g snapshot -cvfp archive-level1.tar /path/to/dir - first + add/mod thing
+tar -g snapshot -cvfp archive-level2.tar /path/todir - first + add/mod + add/mod
+
+tar -xvf archive-level0.tar -C /
+tar -xvf archive-level1.tar -C /
+tar -xvf archive-level2.tar -C /
+
+cpio -o -> create
+cpio -i -> extract
+cpio -p -> copy-pass
+-t, --list
+-H, --format
+-d, --make-directories
+ls | cpio -ov -H tar > home/test-account/backup.tar
+cpio -iv < home/test-account/backup.cpio
+cpio -ivt < home/test-account/backup.cpio -> show list
+
+dump
+-0~9 : level, 0->all
+-f : file/dev
+-u : /etc/dumpdates. write backup info
+
+dump -0u -f backup.dump /dev/hda7
+dump -0f /dev/nst0 /home
+
+restore -rf backup.dump
+-r : restore
+-f : file
+
+
+dd if=/dev/sda1 of=/dev/sdb1 bs=1k
+dd if=/dev/sda of=~/disk.img
+
+rsync -avz /home francis:public_html/
+a = rlptgoD
+
+
