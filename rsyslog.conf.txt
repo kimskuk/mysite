@@ -1,0 +1,17 @@
+*.=crit;user.none		/var/log/critical
+*.alert			*
+cron.*			root,francis
+authpriv.*			/dev/tty1
+mail.*;mail.!=debug		/var/log/meail-message
+auth,authpriv.alert 		@192.168.0.1(udp)
+auth,authpriv.alert		@@192.168.0.1(tcp)
+
+none
+debug
+info
+notice
+warn
+err
+crit
+alert
+emerg, panic
